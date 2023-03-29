@@ -5,6 +5,7 @@ import Plan from './components/plan';
 import Add from './components/add';
 
 import Thank from './components/thank';
+import Summary from './components/summary'
 
 function App() {
   const un = 1;
@@ -69,7 +70,8 @@ function App() {
             {/* <Info /> */}
             {/* <Plan /> */}
             {/* <Add /> */}
-            <Thank />
+            <Summary />
+            {/* <Thank /> */}
           </div>
         </div>
       </div>
