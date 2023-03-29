@@ -4,6 +4,8 @@ import Info from './components/info';
 import Plan from './components/plan';
 import Add from './components/add';
 
+import Thank from './components/thank';
+
 function App() {
   const un = 1;
   const deux = 2;
@@ -66,7 +68,8 @@ function App() {
           <div>
             {/* <Info /> */}
             {/* <Plan /> */}
-            <Add />
+            {/* <Add /> */}
+            <Thank />
           </div>
         </div>
       </div>
