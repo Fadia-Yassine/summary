@@ -1,35 +1,60 @@
 import React, { useState } from 'react'
 import '../sass/plan.sass'
-
+import Arcade from '../assets/img/arcade.svg'
+import Advenced from '../assets/img/advenced.svg'
+import Pro from '../assets/img/pro.svg'
 
 function Plan() {
-    let [name, setName] = useState('');
-    let [mail, setMail] = useState('');
-    let [phone, setPhone] = useState('');
+    let [arcade, setArcade] = useState('$9/mo')
+    let [advanced, setAdvanced] = useState('$12/mo')
+    let [pro, setPro] = useState('$15/mo')
 
-    function nom (){
-        setName(input.value)
-        console.log(input.value);
+    function yearly(){
+        if(arcade == '$9/mo'){
+            setArcade('$90/yo')
+            setAdvanced('$120/yo')
+            setPro('$150/yo')
+        }
+        else {
+            setArcade('$9/mo')
+            setAdvanced('$12/mo')
+            setPro('$15/mo') 
+        }
+    }
+
+    function selected(e){
+        if(e.target.style.border== 'none'){
+            e.target.style.border= '2px solid purple'
+        } else {
+            e.target.style.border= 'none'
+        }
+
     }
 
   return (
     <div>
         <h1>Personal info</h1>
-        <p>Please provide your name, email adress, and phone number.</p>
+        <p>You have the option of monthly or yearly billing.</p>
 
-        <div className='divPlan'>
-            <span> Your name is : {name}</span><br />
-            <input type="text" placeholder='your name' onChange={nom}/>
-        </div>
-        <div className='divPlan'>
-            <span>Your email is :</span><br />
-            <input type="text" placeholder='vingt_six@email.com' />
-        </div>
-        <div className='divPlan'>
-            <span>Your phone number is : </span><br />
-            <input type="text" placeholder='e.g. +1 234 567 890' />
-        </div>
+        <div>
+            <button className='btnPlan' onClick={selected}>
+                <img src={Arcade} />
+                <h3>Arcade</h3>
+                <p>{arcade}</p>
+            </button>
+            <button className='btnPlan' onClick={selected}>
+                <img src={Advenced} />
+                <h3>Advenced</h3>
+                <p>{advanced}</p>
+            </button>
+            <button className='btnPlan' onClick={selected}>
+                <img src={Pro} />
+                <h3>Pro</h3>
+                <p>{pro}</p>
+            </button>
 
+            <div id='div2Plan'>Monthly <button id='buttonPlan' onClick={yearly}><div id='btnPlan'>.</div></button> Yearly</div>
+        </div>
     </div>
   )
 }

@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './sass/App.sass'
+import Info from './components/info';
 import Plan from './components/plan';
+import Add from './components/add';
 
 function App() {
   const un = 1;
@@ -62,7 +64,9 @@ function App() {
         </div>
         <div id='divDeux'>
           <div>
-            <Plan />
+            {/* <Info /> */}
+            {/* <Plan /> */}
+            <Add />
           </div>
         </div>
       </div>
