@@ -8,43 +8,18 @@ import Thank from './components/thank';
 import Summary from './components/summary'
 
 function App() {
-  //creation de variable.
-  //counter pour le bouton a affichage conditionnel.
-
   let [count,setCount] = useState(1);
-  let [currentpage,setCurrentpage] = useState(<Info/>)
-
-  // cette fonction permet d incrementer pour changer l'affichage via le bouton.
-
 
   function next() {
     setCount(count+1);
-    console.log(count);
-
-    if (count == 1) {
-      setCurrentpage(<Info />)
-    }
-
-    else if (count == 2) {
-      setCurrentpage(<Plan/>)
-    }
-
-    else if (count == 3) {
-      setCurrentpage(<Add/>)
-    }
-
-    else if (count == 4) {
-      setCurrentpage(<Summary />)
-    }
-    
-    else {
-      setCurrentpage(<Thank />)
+    if(count == 5){
+      document.getElementsByTagName('.btn').style.display = "none";
     }
   }
 
-  //debut d affichage
   return (
     <div>
+      {/* Mon affichage de base */}
       <div className='grandeDiv'>
         <div className='sommaire'>
           <div className='affichageSommaire'>
@@ -93,9 +68,11 @@ function App() {
             <button className='btn' onClick={next}>Next Step</button>
           </div>
         </div>
+
+        {/* Petite div qui va changer grâce à mon affichage conditionnel */}
         <div id='divDeux'>
           <div>
-            {currentpage}
+            {count== 1? <Info/> : count== 2? <Plan/> : count== 3? <Add/> : count== 4? <Summary />  : <Thank/>}
           </div>
         </div>
       </div>
