@@ -8,15 +8,18 @@ import Thank from './components/thank';
 import Summary from './components/summary'
 
 function App() {
+  //variable qui va aider mon bouton a changer de page
   let [count,setCount] = useState(1);
 
+  //la fonction qui va faire fonctionner mon bouton pour mon changement de page
   function next() {
     setCount(count+1);
-    if(count == 5){
-      document.getElementsByTagName('.btn').style.display = "none";
+    if(count === 4){
+      document.getElementById('btn').style = "display: none";
+      document.getElementById('prev').style = "display: none";
     }
   }
-
+console.log(count)
   return (
     <div>
       {/* Mon affichage de base */}
@@ -65,13 +68,18 @@ function App() {
               </div>
               summary
             </div>
-            <button className='btn' onClick={next}>Next Step</button>
+            {/* affichage conditionnel et fonction flecher pour mon bouton décrémenter */}
+            {count > 1? <button id='prev' onClick={()=>{
+              setCount(count-1);
+            }}>Go Back</button> : "" }
+            <button id='btn' onClick={next}>Next Step</button>
           </div>
         </div>
 
         {/* Petite div qui va changer grâce à mon affichage conditionnel */}
         <div id='divDeux'>
           <div>
+            {/* Mon affichage conditionnel */}
             {count== 1? <Info/> : count== 2? <Plan/> : count== 3? <Add/> : count== 4? <Summary />  : <Thank/>}
           </div>
         </div>
