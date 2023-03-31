@@ -1,7 +1,8 @@
 import React from 'react'
 import '../sass/summary.sass'
 
-function Summary() {
+function Summary(props) {
+  console.log(props);
   return (
     <div>
         <h1>Finishing up</h1>

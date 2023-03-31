@@ -5,7 +5,7 @@ import Info from './components/info';
 import Plan from './components/plan';
 import Add from './components/add';
 import Thank from './components/thank';
-import Summary from './components/summary'
+import Summary from './components/summary';
 
 function App() {
   //variable qui va aider mon bouton a changer de page
@@ -80,7 +80,7 @@ console.log(count)
         <div id='divDeux'>
           <div>
             {/* Mon affichage conditionnel */}
-            {count== 1? <Info/> : count== 2? <Plan/> : count== 3? <Add/> : count== 4? <Summary />  : <Thank/>}
+            {count== 1? <Info /> : count== 2? <Plan /> : count== 3? <Add/> : count== 4? <Summary />  : <Thank/>}
           </div>
         </div>
       </div>

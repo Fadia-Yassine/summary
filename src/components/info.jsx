@@ -3,10 +3,12 @@ import '../sass/info.sass'
 
 
 function Info() {
+    // récupération de donnée
     let [name, setName] = useState('');
     let [mail, setMail] = useState('');
     let [phone, setPhone] = useState('');
 
+    // manipulation de donnée (au dessus) pour les réinscrire au dessus
     function nom (e){
         setName(e.target.value)
         console.log(e.target.value);

@@ -3,6 +3,7 @@ import '../sass/add.sass'
 
 function Add() {
 
+    // selection du choix de l'abonnement
     function activate(e){
         if(e.target.className == 'encadrementAdd'){
             e.target.className = 'encadrementAddBiss'
